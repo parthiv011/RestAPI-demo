@@ -5,6 +5,8 @@ import cors from 'cors';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import dotenv from 'dotenv';
 
+import router from './routes'
+
 dotenv.config();
 
 const port = process.env.PORT;
@@ -46,3 +48,5 @@ async function run() {
     }
 }
 run().catch(console.dir);
+
+app.use('/',router());
